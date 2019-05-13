@@ -10,9 +10,9 @@ let s:errors = 0
 
 execute 'lcd' s:templates
 
-for s:template in glob(s:templates . '/solarized8*.colortemplate', 1, 1)
+for s:template in glob(s:templates . '/galactic*.colortemplate', 1, 1)
   let s:template_name = fnamemodify(s:template, ':t:r')
-  if s:template_name == 'solarized8'
+  if s:template_name == 'galactic'
     let g:colortemplate_no_doc = 0
   else
     let g:colortemplate_no_doc = 1

@@ -1,14 +1,18 @@
 # vim: ft=colortemplate fdm=marker
+# To build, execute
+# :source scripts/make_colorschemes.vim
+# To test, execute
+# :source colors/galactic.vim
 
 # Information {{{
-Full name:       Solarized 8 Low Contrast
-Short name:      solarized8_low
-Author:          Ethan Schoonover
-Maintainer:      Lifepillar <lifepillar@lifepillar.me>
-Website:         https://github.com/lifepillar/vim-solarized8
-Description:     Precision colors for machines and people
+Full name:       Galactic
+Short name:      galactic
+Author:          Max O'Cull <max.ocull@protonmail.com>
+Maintainer:      Max O'Cull <max.ocull@protonmail.com>
+Website:         https://github.com/maxattax97/vim-galactic
+Description:     Standard colors for the galactic empire.
 Terminal Colors: 256, 16
-Option Prefix:   solarized
+Option Prefix:   galactic
 License:         OSI approved MIT license
 # }}}
 
@@ -20,24 +24,24 @@ Background: dark
 
 # Color palette {{{
 # Color name                GUI                  Base256    Base16 (optional)
-Color: base03               #002b36                ~        8
-Color: base02               #073642               239       0
-Color: base01               #586e75                ~        10
-Color: base00               #657b83                ~        11
-Color: base0                #839496                ~        12
-Color: base1                #93a1a1                ~        14
-Color: base2                #eee8d5                ~        7
-Color: base3                #fdf6e3                ~        15
-Color: yellow               #b58900                ~        3
-Color: orange               #cb4b16                ~        9
-Color: red                  #dc322f                ~        1
-Color: magenta              #d33682                ~        5
-Color: violet               #6c71c4                ~        13
-Color: blue                 #268bd2                ~        4
-Color: cyan                 #2aa198                ~        6
-Color: green                #859900                ~        2
+Color: base03               #1b1b1b                ~        8
+Color: base02               #303030                ~        0
+Color: base01               #474747                ~        10
+Color: base00               #5e5e5e                ~        11
+Color: base0                #919191                ~        12
+Color: base1                #ababab                ~        14
+Color: base2                #c6c6c6                ~        7
+Color: base3                #e2e2e2                ~        15
+Color: yellow               #a68f01                ~        3
+Color: orange               #dd7202                ~        9
+Color: red                  #ff511a                ~        1
+Color: magenta              #fe3bb9                ~        5
+Color: violet               #cc62fe                ~        13
+Color: blue                 #3294ff                ~        4
+Color: cyan                 #07a38f                ~        6
+Color: green                #4ca340                ~        2
 #Color:green                #719e07                ~        2
-Color: back                 #073642                ~        0
+Color: back                 #1b1b1b                ~        8
 # }}}
 
 # Terminal colors {{{
@@ -45,37 +49,38 @@ Include: _terminal_ansi_colors_dark.colortemplate
 Include: _neovim_dark.colortemplate
 # }}}
 
+# Fix 256-color palette in supported terminals {{{
+Include: _fix-256-palette.colortemplate
+# }}}
+
 # Default highlight groups {{{
 verbatim
-if !has('gui_running') && get(g:, '@optionprefix_termtrans', 0)
+if !has('gui_running') && get(g:, '@optionprefix_termopaque', 0)
 endverbatim
 
-  # Transparent background
-  Normal             base0             none
-  FoldColumn         fg                none
-  Folded             fg                none             bold s=base03
-  LineNr             base01            none
-  Terminal           fg                none
+  # Opaque background
+  Normal            base1             back
+  FoldColumn        base0             base02
+  Folded            base0             base02            bold s=base03
+  LineNr            base01            base03
+  Terminal          fg                back
 
 verbatim
 hi CursorLineNr ctermbg=NONE guifg=NONE
 else
 endverbatim
 
-  # Opaque background
-  Normal            base0             back
-  FoldColumn        base0             base02
-  Folded            base0             base02            bold s=base03
-  LineNr            base01            base02
-  Terminal          fg                back
+  # Transparent background
+  Normal             base1             none
+  FoldColumn         fg                none
+  Folded             fg                none             bold s=base03
+  LineNr             base01            base03
+  Terminal           fg                none
 
 verbatim
-hi CursorLineNr ctermbg=@base02 guibg=@base02
+hi CursorLineNr ctermbg=@base03 guibg=@base03
 endif
 endverbatim
-
-ColorColumn          none              base02
-Conceal              blue              none
 
 # Visibility ================================================================
 verbatim
@@ -84,10 +89,10 @@ hi CursorLineNr ctermfg=@orange guifg=@orange cterm=bold gui=bold
 endverbatim
 NonText              orange            none              bold
 SpecialKey           orange            none              reverse
-SpellBad             violet            base2             t=underline,reverse g=undercurl,reverse s=red
-SpellCap             violet            base2             t=underline,reverse g=undercurl,reverse s=red
-SpellLocal           yellow            base2             t=underline,reverse g=undercurl,reverse s=red
-SpellRare            cyan              base2             t=underline,reverse g=undercurl,reverse s=red
+SpellBad             violet            base3             t=underline,reverse g=undercurl,reverse s=red
+SpellCap             violet            base3             t=underline,reverse g=undercurl,reverse s=red
+SpellLocal           yellow            base3             t=underline,reverse g=undercurl,reverse s=red
+SpellRare            cyan              base3             t=underline,reverse g=undercurl,reverse s=red
 Title                yellow            none              bold
 verbatim
 elseif get(g:, "@optionprefix_visibility", "") == "low"
@@ -116,6 +121,9 @@ endif
 endverbatim
 # ---------------------------------------------------------------------------
 
+ColorColumn          none              base02
+Conceal              blue              none
+
 # Cursor style ==============================================================
 verbatim
 if get(g:, '@optionprefix_old_cursor_style', 0)
@@ -131,7 +139,7 @@ endverbatim
 # ---------------------------------------------------------------------------
 
 CursorColumn         none              base02
-CursorLine           none              base02            underline s=base1
+CursorLine           none              base02            s=base1
 
 # Diff mode =================================================================
 verbatim
@@ -165,10 +173,10 @@ IncSearch            orange            none              standout
 MatchParen           base3             base02            bold
 ModeMsg              blue              none
 MoreMsg              blue              none
-Pmenu                base00            base03
-PmenuSbar            none              base03
-PmenuSel             base00            base02
-PmenuThumb           none              base03
+Pmenu                base1             base02
+PmenuSbar            none              base01
+PmenuSel             base2             base00
+PmenuThumb           none              base0
 Question             cyan              none              bold
 QuickFixLine     ->  Search
 Search               yellow            none              reverse
@@ -177,20 +185,20 @@ verbatim
 if get(g:, "@optionprefix_statusline", "") == "low"
 endverbatim
 StatusLine           base01            base2             reverse
-StatusLineNC         base01            base1             reverse
-TabLine              base01            base1             reverse
-TabLineFill          base01            base1             reverse
-TabLineSel           base01            base2             reverse
-VertSplit            base1             base01
+StatusLineNC         base01            base02            reverse
+TabLine              base01            base02            reverse
+TabLineFill          base01            base02            reverse
+TabLineSel           base0             base3             reverse
+VertSplit            base02            base01
 verbatim
 elseif get(g:, "@optionprefix_statusline", "") == "flat"
 endverbatim
-StatusLine           base03            base2             reverse
-StatusLineNC         base03            base1             reverse
-TabLineSel           base2             base03
-TabLine              base01            base03
-TabLineFill          base01            base03
-VertSplit            base01            base03
+StatusLine           base02            base2             reverse
+StatusLineNC         base02            base1             reverse
+TabLineSel           base2             base02
+TabLine              base01            base02
+TabLineFill          base01            base02
+VertSplit            base01            base02
 verbatim
 else
 endverbatim
@@ -199,7 +207,7 @@ StatusLineNC         base01            base02            reverse
 TabLine              base01            base02            reverse
 TabLineFill          base01            base02            reverse
 TabLineSel           base0             base02            reverse
-VertSplit            base1             base01
+VertSplit            base02            base01
 verbatim
 endif
 endverbatim
@@ -233,7 +241,7 @@ Operator          -> Statement
 PreCondit         -> PreProc
 PreProc              orange            none
 Repeat            -> Statement
-Special              orange            none
+Special              red            none
 SpecialChar       -> Special
 SpecialComment    -> Special
 Statement            green             none
@@ -270,24 +278,42 @@ Background: light
 
 # Color palette {{{
 # Color name                GUI                  Base256    Base16 (optional)
-Color: base3                #002b36                ~        8
-Color: base2                #073642                ~        0
-Color: base1                #586e75                ~        10
-Color: base0                #657b83                ~        11
-Color: base00               #839496                ~        12
-Color: base01               #93a1a1                ~        14
-Color: base02               #eee8d5                ~        7
-Color: base03               #fdf6e3                ~        15
-Color: yellow               #b58900                ~        3
-Color: orange               #cb4b16                ~        9
-Color: red                  #dc322f                ~        1
-Color: magenta              #d33682                ~        5
-Color: violet               #6c71c4                ~        13
-Color: blue                 #268bd2                ~        4
-Color: cyan                 #2aa198                ~        6
-Color: green                #859900                ~        2
+Color: base3                #1b1b1b                ~        8
+Color: base2                #303030                ~        0
+Color: base1                #474747                ~        10
+Color: base0                #5e5e5e                ~        11
+Color: base00               #919191                ~        12
+Color: base01               #ababab                ~        14
+Color: base02               #c6c6c6                ~        7
+Color: base03               #e2e2e2                ~        15
+Color: yellow               #6d5d01                ~        3
+Color: orange               #924901                ~        9
+Color: red                  #b02a01                ~        1
+Color: magenta              #b2027e                ~        5
+Color: violet               #9807d6                ~        13
+Color: blue                 #0861af                ~        4
+Color: cyan                 #066b5d                ~        6
+Color: green                #056e07                ~        2
 #Color:green                #719e07                ~        2
-Color: back                 #eee8d5                ~        7
+Color: back                 #e2e2e2                ~        8
+# Color: base3                #002b36                ~        8
+# Color: base2                #073642                ~        0
+# Color: base1                #586e75                ~        10
+# Color: base0                #657b83                ~        11
+# Color: base00               #839496                ~        12
+# Color: base01               #93a1a1                ~        14
+# Color: base02               #eee8d5                ~        7
+# Color: base03               #fdf6e3                ~        15
+# Color: yellow               #b58900                ~        3
+# Color: orange               #cb4b16                ~        9
+# Color: red                  #dc322f                ~        1
+# Color: magenta              #d33682                ~        5
+# Color: violet               #6c71c4                ~        13
+# Color: blue                 #268bd2                ~        4
+# Color: cyan                 #2aa198                ~        6
+# Color: green                #859900                ~        2
+# #Color:green                #719e07                ~        2
+# Color: back                 #fdf6e3                ~        15
 # }}}
 
 # Terminal colors {{{
@@ -301,7 +327,7 @@ if !has('gui_running') && get(g:, '@optionprefix_termtrans', 0)
 endverbatim
 
   # Transparent background
-  Normal             base0             none
+  Normal             base1             none
   FoldColumn         base0             none
   Folded             base0             none              bold s=base03
   LineNr             base01            none
@@ -313,11 +339,12 @@ else
 endverbatim
 
   # Opaque background
-  Normal            base0             back
+  Normal            base1             back
   FoldColumn        base0             base02
   Folded            base0             base02            bold s=base03
   LineNr            base01            base02
   Terminal          fg                back
+
 verbatim
 hi CursorLineNr ctermbg=@base02 guibg=@base02
 endif
@@ -338,13 +365,13 @@ Cursor               base03            red
 verbatim
 endif
 endverbatim
-MatchParen           base3             none              bold,underline
+MatchParen           base03            base00            bold
 NonText              red               none              bold
 SpecialKey           red               none              reverse
-SpellBad             magenta           base02            t=underline,reverse g=undercurl,reverse s=violet
-SpellCap             magenta           base02            t=underline,reverse g=undercurl,reverse s=violet
-SpellLocal           yellow            base02            t=underline,reverse g=undercurl,reverse s=orange
-SpellRare            cyan              base02            t=underline,reverse g=undercurl,reverse s=orange
+SpellBad             magenta           base03            t=underline,reverse g=undercurl,reverse s=violet
+SpellCap             magenta           base03            t=underline,reverse g=undercurl,reverse s=violet
+SpellLocal           yellow            base03            t=underline,reverse g=undercurl,reverse s=orange
+SpellRare            cyan              base03            t=underline,reverse g=undercurl,reverse s=orange
 Title                orange            none              bold
 # Low visibility
 verbatim
@@ -360,7 +387,7 @@ Cursor               base03            orange
 verbatim
 endif
 endverbatim
-MatchParen           base3             base02            bold
+MatchParen           red               base02            bold,underline
 NonText              base02            none              bold
 SpecialKey           base02            none              bold
 SpellBad             magenta           none              t=underline g=undercurl s=violet
@@ -382,7 +409,7 @@ Cursor               base03            orange
 verbatim
 endif
 endverbatim
-MatchParen           base3             base02            bold
+MatchParen           red               base02            bold,underline
 NonText              base00            none              bold
 SpecialKey           base00            base02            bold
 SpellBad             magenta           none              t=underline g=undercurl s=violet
@@ -398,7 +425,7 @@ endverbatim
 ColorColumn          none              base02
 Conceal              blue              none
 CursorColumn         none              base02
-CursorLine           none              base02            underline s=base1
+CursorLine           none              base02            s=base1
 
 # Diff mode =================================================================
 verbatim
@@ -431,10 +458,10 @@ ErrorMsg             red               base03            reverse
 IncSearch            orange            none              standout
 ModeMsg              blue              none
 MoreMsg              blue              none
-Pmenu                base03            base01
-PmenuSbar            none              base0
-PmenuSel             base03            base00
-PmenuThumb           none              base00
+Pmenu                base1             base02
+PmenuSbar            none              base01
+PmenuSel             base02            base00
+PmenuThumb           none              base0
 Question             cyan              none              bold
 QuickFixLine     ->  Search
 Search               yellow            none              reverse
@@ -442,23 +469,23 @@ SignColumn           base0             none
 verbatim
 if get(g:, "@optionprefix_statusline", "") == "low"
 endverbatim
-StatusLine           base01            base02            reverse
+StatusLine           base01            base03            reverse
 StatusLineNC         base01            base1             reverse
 TabLine              base01            base1             reverse
 TabLineFill          base01            base1             reverse
-TabLineSel           base01            base02            reverse
+TabLineSel           base1             base03            reverse
 VertSplit            base1             base01
-WildMenu             base0             base02            reverse
+WildMenu             base1             base03            reverse
 verbatim
 elseif get(g:, "@optionprefix_statusline", "") == "flat"
 endverbatim
-StatusLine           base03            base2             reverse
-StatusLineNC         base03            base1             reverse
-TabLineSel           base2             base03
-TabLine              base01            base03
-TabLineFill          base01            base03
-VertSplit            base01            base03
-WildMenu             base01            base03            reverse
+StatusLine           base02            base2             reverse
+StatusLineNC         base02            base1             reverse
+TabLineSel           base2             base02
+TabLine              base01            base02
+TabLineFill          base01            base02
+VertSplit            base01            base02
+WildMenu             base00            base03            reverse
 verbatim
 else
 endverbatim
@@ -468,7 +495,7 @@ TabLine              base00            base02            reverse
 TabLineFill          base00            base02            reverse
 TabLineSel           base1             base02            reverse
 VertSplit            base1             base01
-WildMenu             base00            base02            reverse
+WildMenu             base2             base02            reverse
 verbatim
 endif
 endverbatim
@@ -534,3 +561,6 @@ CommandMode          magenta           base03            reverse
 Include: _extra.colortemplate
 # }}}
 
+# Plugin highlights {{{
+Include: _plugins.colortemplate
+# }}}

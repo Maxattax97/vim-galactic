@@ -1,0 +1,32 @@
+# vim: ft=colortemplate fdm=marker
+# Plugin specific highlight groups {{{
+verbatim
+if get(g:, '@optionprefix_plugin_hi_groups', 0)
+endverbatim
+# Neomake {{{
+NeomakeErrorSign           orange          none
+NeomakeWarningSign         yellow          none
+NeomakeMessageSign         cyan            none
+NeomakeNeomakeInfoSign     green           none
+NeomakeInfoSign            green           none
+# }}}
+# GitGutter {{{
+GitGutterAdd               green           none
+GitGutterChange            yellow          none
+GitGutterDelete            red             none
+GitGutterChangeDelete      red             none
+# }}}
+# Signify {{{
+SignifySignAdd             green           none
+SignifySignChange          yellow          none
+SignifySignDelete          red             none
+SignifySignChangeDelete    red             none
+# }}}
+# ALE {{{
+ALEErrorSign               orange          none
+ALEWarningSign             yellow          none
+# }}}
+verbatim
+endif
+endverbatim
+# }}}

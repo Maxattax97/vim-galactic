@@ -1,8 +1,8 @@
-*solarized8.txt*	For Vim version 7.4	Last change: 2019 March 26
+*galactic.txt*	For Vim version 7.4	Last change: 2019 March 26
 ==============================================================================
-Solarized 8 license		*solarized8-license*
+Galactic license		*galactic-license*
 
-Copyright (c) 2011 Ethan Schoonover
+Copyright (c) 2019 Max O'Cull
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,61 +22,61 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ==============================================================================
-Solarized 8 colorscheme			*solarized8*
+Galactic colorscheme			*galactic*
 
-						*g:solarized_diffmode*
+						*g:galactic_diffmode*
 Tweak the way diffs are displayed. Allowed values are `"normal"` (default),
 `"high"`, and `"low"`.
 >
-	let g:solarized_diffmode = "normal"
+	let g:galactic_diffmode = "normal"
 <
-					*g:solarized_enable_extra_hi_groups*
+					*g:galactic_enable_extra_hi_groups*
 Set to 1 to enable filetype-specific syntax highlight group.
 >
-	let g:solarized_enable_extra_hi_groups = 0
+	let g:galactic_enable_extra_hi_groups = 0
 <
 NOTE: setting this to 1 may leave "a wake of destruction when switching away"
 (T. Pope), that is, when you switch to a different colorscheme the
 highlighting may look wrong or disabled.
-						*g:solarized_old_cursor_style*
-Set to 1 if you want to use the original Solarized's cursor style. By default,
+						*g:galactic_old_cursor_style*
+Set to 1 if you want to use the original Galactic's cursor style. By default,
 the cursor is blue. NOTE: your terminal may override the cursor's color.
 >
-	let g:solarized_old_cursor_style = 0
+	let g:galactic_old_cursor_style = 0
 <
-						*g:solarized_statusline*
+						*g:galactic_statusline*
 Set to `"low"` to reduce the contrast in the status line. Set to `"flat"` to
 make the status lines, tab bars and vertical splits similar to how they look
 in the flat variant (of course, `"flat"` does not have any effect in the flat
 variant).
 >
-	let g:solarized_statusline = "normal"
+	let g:galactic_statusline = "normal"
 <
-						*g:solarized_term_italics*
+						*g:galactic_term_italics*
 Set to 1 if you want to enable italics in the terminal.
 >
-	let g:solarized_term_italics = 0
+	let g:galactic_term_italics = 0
 <
-						*g:solarized_termtrans*
+						*g:galactic_termtrans*
 Set to 1 if you want a transparent background. Takes effect only in the
 terminal.
 >
-	let g:solarized_termtrans = 0
+	let g:galactic_termtrans = 0
 <
-						*g:solarized_visibility*
+						*g:galactic_visibility*
 Tweak the visibility of a few  elements. Allowed values are `"normal"`
 (default), `"high"`, and `"low"`.
 >
-	let g:solarized_visibility = "normal"
+	let g:galactic_visibility = "normal"
 <
 
 
 ==============================================================================
-Solarized 8 other options		*solarized8-other-options*
+Galactic other options			*galactic-other-options*
 
-							*g:solarized_use16*
+							*g:galactic_use16*
 Set to 1 if you want to force the use of 16 colors.
 >
-	let g:solarized_use16 = 0
+	let g:galactic_use16 = 0
 <
 vim:tw=78:ts=8:ft=help:norl:

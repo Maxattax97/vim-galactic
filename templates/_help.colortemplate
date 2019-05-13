@@ -5,7 +5,7 @@ documentation
 ==============================================================================
 @fullname license		*@shortname-license*
 
-Copyright (c) 2011 Ethan Schoonover
+Copyright (c) 2019 Max O'Cull
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,7 @@ NOTE: setting this to 1 may leave "a wake of destruction when switching away"
 (T. Pope), that is, when you switch to a different colorscheme the
 highlighting may look wrong or disabled.
 						*g:@optionprefix_old_cursor_style*
-Set to 1 if you want to use the original Solarized's cursor style. By default,
+Set to 1 if you want to use the original Galactic's cursor style. By default,
 the cursor is blue. NOTE: your terminal may override the cursor's color.
 >
 	let g:@optionprefix_old_cursor_style = 0
@@ -74,4 +74,3 @@ Tweak the visibility of a few  elements. Allowed values are `"normal"`
 <
 
 enddocumentation
-
