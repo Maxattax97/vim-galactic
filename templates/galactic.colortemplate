@@ -20,6 +20,23 @@ License:         OSI approved MIT license
 Include: _help.colortemplate
 # }}}
 
+# Presets {{{
+verbatim
+if get(g:, '@optionprefix_termtrans', 1)
+  let g:@optionprefix_termtrans=1
+endif
+if get(g:, '@optionprefix_extra_hi_groups', 1)
+  let g:@optionprefix_extra_hi_groups=1
+endif
+if get(g:, '@optionprefix_plugin_hi_groups', 1)
+  let g:@optionprefix_plugin_hi_groups=1
+endif
+if get(g:, '@optionprefix_term_italics', 1)
+  let g:@optionprefix_term_italics=1
+endif
+endverbatim
+# }}}
+
 Background: dark
 
 # Color palette {{{
@@ -55,19 +72,7 @@ Include: _fix-256-palette.colortemplate
 
 # Default highlight groups {{{
 verbatim
-if !has('gui_running') && get(g:, '@optionprefix_termopaque', 0)
-endverbatim
-
-  # Opaque background
-  Normal            base1             back
-  FoldColumn        base0             base02
-  Folded            base0             base02            bold s=base03
-  LineNr            base01            base03
-  Terminal          fg                back
-
-verbatim
-hi CursorLineNr ctermbg=NONE guifg=NONE
-else
+if !has('gui_running') && get(g:, '@optionprefix_termtrans', 0)
 endverbatim
 
   # Transparent background
@@ -76,6 +81,18 @@ endverbatim
   Folded             fg                none             bold s=base03
   LineNr             base01            base03
   Terminal           fg                none
+
+verbatim
+hi CursorLineNr ctermbg=NONE guifg=NONE
+else
+endverbatim
+
+  # Opaque background
+  Normal            base1             back
+  FoldColumn        base0             base02
+  Folded            base0             base02            bold s=base03
+  LineNr            base01            base03
+  Terminal          fg                back
 
 verbatim
 hi CursorLineNr ctermbg=@base03 guibg=@base03
@@ -274,6 +291,10 @@ CommandMode          magenta           base3             reverse
 Include: _extra.colortemplate
 # }}}
 
+# Plugin highlights {{{
+Include: _plugins.colortemplate
+# }}}
+
 Background: light
 
 # Color palette {{{
@@ -342,7 +363,7 @@ endverbatim
   Normal            base1             back
   FoldColumn        base0             base02
   Folded            base0             base02            bold s=base03
-  LineNr            base01            base02
+  LineNr            base01            base03
   Terminal          fg                back
 
 verbatim

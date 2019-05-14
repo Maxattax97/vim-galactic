@@ -4,7 +4,7 @@
 " Maintainer:   Max O'Cull <max.ocull@protonmail.com>
 " Website:      https://github.com/maxattax97/vim-galactic
 " License:      OSI approved MIT license
-" Last Updated: Mon 13 May 2019 07:04:28 PM EDT
+" Last Updated: Mon 13 May 2019 09:01:02 PM EDT
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'galactic_use16', &t_Co < 256) ? 16 : 256))
@@ -21,6 +21,19 @@ let g:colors_name = 'galactic'
 
 " 256-color variant
 if !get(g:, 'galactic_use16', &t_Co < 256)
+  if get(g:, 'galactic_termtrans', 1)
+    let g:galactic_termtrans=1
+  endif
+  if get(g:, 'galactic_extra_hi_groups', 1)
+    let g:galactic_extra_hi_groups=1
+  endif
+  if get(g:, 'galactic_plugin_hi_groups', 1)
+    let g:galactic_plugin_hi_groups=1
+  endif
+  if get(g:, 'galactic_term_italics', 1)
+    let g:galactic_term_italics=1
+  endif
+
   if &background ==# 'dark'
     let g:terminal_ansi_colors = ['#303030', '#ff511a', '#4ca340', '#a68f01', '#3294ff', '#fe3bb9', '#07a38f', '#c6c6c6',
           \ '#1b1b1b', '#dd7202', '#474747', '#5e5e5e', '#919191', '#cc62fe', '#ababab', '#e2e2e2']
@@ -44,19 +57,19 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
       let g:terminal_color_14='#ababab'
       let g:terminal_color_15='#e2e2e2'
     endif
-    if !has('gui_running') && get(g:, 'galactic_termopaque', 0)
-      hi Normal ctermfg=248 ctermbg=234 guifg=#ababab guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
-      hi FoldColumn ctermfg=246 ctermbg=236 guifg=#919191 guibg=#303030 guisp=NONE cterm=NONE gui=NONE
-      hi Folded ctermfg=246 ctermbg=236 guifg=#919191 guibg=#303030 guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
-      hi LineNr ctermfg=238 ctermbg=234 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
-      hi Terminal ctermfg=fg ctermbg=234 guifg=fg guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
-      hi CursorLineNr ctermbg=NONE guifg=NONE
-    else
+    if !has('gui_running') && get(g:, 'galactic_termtrans', 0)
       hi Normal ctermfg=248 ctermbg=NONE guifg=#ababab guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
       hi LineNr ctermfg=238 ctermbg=234 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
       hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi CursorLineNr ctermbg=NONE guifg=NONE
+    else
+      hi Normal ctermfg=248 ctermbg=234 guifg=#ababab guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi FoldColumn ctermfg=246 ctermbg=236 guifg=#919191 guibg=#303030 guisp=NONE cterm=NONE gui=NONE
+      hi Folded ctermfg=246 ctermbg=236 guifg=#919191 guibg=#303030 guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
+      hi LineNr ctermfg=238 ctermbg=234 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi Terminal ctermfg=fg ctermbg=234 guifg=fg guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
       hi CursorLineNr ctermbg=234 guibg=#1b1b1b
     endif
     if get(g:, "galactic_visibility", "") == "high"
@@ -387,6 +400,23 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
       hi pandocEmphasisTable cterm=italic
       hi pandocEmphasis cterm=italic
     endif
+    if get(g:, 'galactic_plugin_hi_groups', 0)
+      hi NeomakeErrorSign ctermfg=166 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeWarningSign ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeMessageSign ctermfg=36 ctermbg=NONE guifg=#07a38f guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeNeomakeInfoSign ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeInfoSign ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterAdd ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterChange ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterChangeDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignAdd ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignChange ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignChangeDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi ALEErrorSign ctermfg=166 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi ALEWarningSign ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    endif
     finish
   endif
 
@@ -423,7 +453,7 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
     hi Normal ctermfg=238 ctermbg=254 guifg=#474747 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=59 ctermbg=251 guifg=#5e5e5e guibg=#c6c6c6 guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=59 ctermbg=251 guifg=#5e5e5e guibg=#c6c6c6 guisp=#e2e2e2 cterm=NONE,bold gui=NONE,bold
-    hi LineNr ctermfg=248 ctermbg=251 guifg=#ababab guibg=#c6c6c6 guisp=NONE cterm=NONE gui=NONE
+    hi LineNr ctermfg=248 ctermbg=254 guifg=#ababab guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
     hi Terminal ctermfg=fg ctermbg=254 guifg=fg guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=251 guibg=#c6c6c6
   endif
@@ -790,6 +820,19 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
 endif
 
 " 16-color variant
+if get(g:, 'galactic_termtrans', 1)
+  let g:galactic_termtrans=1
+endif
+if get(g:, 'galactic_extra_hi_groups', 1)
+  let g:galactic_extra_hi_groups=1
+endif
+if get(g:, 'galactic_plugin_hi_groups', 1)
+  let g:galactic_plugin_hi_groups=1
+endif
+if get(g:, 'galactic_term_italics', 1)
+  let g:galactic_term_italics=1
+endif
+
 if &background ==# 'dark'
   let g:terminal_ansi_colors = ['#303030', '#ff511a', '#4ca340', '#a68f01', '#3294ff', '#fe3bb9', '#07a38f', '#c6c6c6',
         \ '#1b1b1b', '#dd7202', '#474747', '#5e5e5e', '#919191', '#cc62fe', '#ababab', '#e2e2e2']
@@ -813,19 +856,19 @@ if &background ==# 'dark'
     let g:terminal_color_14='#ababab'
     let g:terminal_color_15='#e2e2e2'
   endif
-  if !has('gui_running') && get(g:, 'galactic_termopaque', 0)
-    hi Normal ctermfg=14 ctermbg=8 guifg=#ababab guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
-    hi FoldColumn ctermfg=12 ctermbg=0 guifg=#919191 guibg=#303030 guisp=NONE cterm=NONE gui=NONE
-    hi Folded ctermfg=12 ctermbg=0 guifg=#919191 guibg=#303030 guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
-    hi LineNr ctermfg=10 ctermbg=8 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
-    hi Terminal ctermfg=fg ctermbg=8 guifg=fg guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
-    hi CursorLineNr ctermbg=NONE guifg=NONE
-  else
+  if !has('gui_running') && get(g:, 'galactic_termtrans', 0)
     hi Normal ctermfg=14 ctermbg=NONE guifg=#ababab guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=10 ctermbg=8 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
     hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi CursorLineNr ctermbg=NONE guifg=NONE
+  else
+    hi Normal ctermfg=14 ctermbg=8 guifg=#ababab guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi FoldColumn ctermfg=12 ctermbg=0 guifg=#919191 guibg=#303030 guisp=NONE cterm=NONE gui=NONE
+    hi Folded ctermfg=12 ctermbg=0 guifg=#919191 guibg=#303030 guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
+    hi LineNr ctermfg=10 ctermbg=8 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=8 guifg=fg guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=8 guibg=#1b1b1b
   endif
   if get(g:, "galactic_visibility", "") == "high"
@@ -1156,6 +1199,23 @@ if &background ==# 'dark'
     hi pandocEmphasisTable cterm=italic
     hi pandocEmphasis cterm=italic
   endif
+  if get(g:, 'galactic_plugin_hi_groups', 0)
+    hi NeomakeErrorSign ctermfg=9 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeWarningSign ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeMessageSign ctermfg=6 ctermbg=NONE guifg=#07a38f guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeNeomakeInfoSign ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeInfoSign ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterAdd ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterChange ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignAdd ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignChange ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignChangeDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi ALEErrorSign ctermfg=9 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi ALEWarningSign ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  endif
   finish
 endif
 
@@ -1192,7 +1252,7 @@ else
   hi Normal ctermfg=10 ctermbg=8 guifg=#474747 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
   hi FoldColumn ctermfg=11 ctermbg=7 guifg=#5e5e5e guibg=#c6c6c6 guisp=NONE cterm=NONE gui=NONE
   hi Folded ctermfg=11 ctermbg=7 guifg=#5e5e5e guibg=#c6c6c6 guisp=#e2e2e2 cterm=NONE,bold gui=NONE,bold
-  hi LineNr ctermfg=14 ctermbg=7 guifg=#ababab guibg=#c6c6c6 guisp=NONE cterm=NONE gui=NONE
+  hi LineNr ctermfg=14 ctermbg=15 guifg=#ababab guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
   hi Terminal ctermfg=fg ctermbg=8 guifg=fg guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
   hi CursorLineNr ctermbg=7 guibg=#c6c6c6
 endif
@@ -1577,16 +1637,16 @@ finish
 " Color: back                 #1b1b1b                ~        8
 " TermCursor        -> Cursor
 " TermCursorNC         base03            base01
-"   Normal            base1             back
-"   FoldColumn        base0             base02
-"   Folded            base0             base02            bold s=base03
-"   LineNr            base01            base03
-"   Terminal          fg                back
 "   Normal             base1             none
 "   FoldColumn         fg                none
 "   Folded             fg                none             bold s=base03
 "   LineNr             base01            base03
 "   Terminal           fg                none
+"   Normal            base1             back
+"   FoldColumn        base0             base02
+"   Folded            base0             base02            bold s=base03
+"   LineNr            base01            base03
+"   Terminal          fg                back
 " NonText              orange            none              bold
 " SpecialKey           orange            none              reverse
 " SpellBad             violet            base3             t=underline,reverse g=undercurl,reverse s=red
@@ -1884,6 +1944,21 @@ finish
 " pandocMetadataKey                      blue               none
 " pandocMetadata                         blue               none           bold
 " pandocMetadataTitle                 -> pandocMetadata
+" NeomakeErrorSign           orange          none
+" NeomakeWarningSign         yellow          none
+" NeomakeMessageSign         cyan            none
+" NeomakeNeomakeInfoSign     green           none
+" NeomakeInfoSign            green           none
+" GitGutterAdd               green           none
+" GitGutterChange            yellow          none
+" GitGutterDelete            red             none
+" GitGutterChangeDelete      red             none
+" SignifySignAdd             green           none
+" SignifySignChange          yellow          none
+" SignifySignDelete          red             none
+" SignifySignChangeDelete    red             none
+" ALEErrorSign               orange          none
+" ALEWarningSign             yellow          none
 " Background: light
 " Color: base3                #1b1b1b                ~        8
 " Color: base2                #303030                ~        0
@@ -1912,7 +1987,7 @@ finish
 "   Normal            base1             back
 "   FoldColumn        base0             base02
 "   Folded            base0             base02            bold s=base03
-"   LineNr            base01            base02
+"   LineNr            base01            base03
 "   Terminal          fg                back
 " Cursor               base03            base0
 " Cursor               base03            red
