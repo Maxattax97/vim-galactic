@@ -4,27 +4,27 @@ verbatim
 if get(g:, '@optionprefix_plugin_hi_groups', 0)
 endverbatim
 # Neomake {{{
-NeomakeErrorSign           orange          none
-NeomakeWarningSign         yellow          none
-NeomakeMessageSign         cyan            none
-NeomakeNeomakeInfoSign     green           none
-NeomakeInfoSign            green           none
+NeomakeErrorSign           orange          base03
+NeomakeWarningSign         yellow          base03
+NeomakeMessageSign         cyan            base03
+NeomakeNeomakeInfoSign     green           base03
+NeomakeInfoSign            green           base03
 # }}}
 # GitGutter {{{
-GitGutterAdd               green           none
-GitGutterChange            yellow          none
-GitGutterDelete            red             none
-GitGutterChangeDelete      red             none
+GitGutterAdd               green           base03
+GitGutterChange            yellow          base03
+GitGutterDelete            red             base03
+GitGutterChangeDelete      red             base03
 # }}}
 # Signify {{{
-SignifySignAdd             green           none
-SignifySignChange          yellow          none
-SignifySignDelete          red             none
-SignifySignChangeDelete    red             none
+SignifySignAdd             green           base03
+SignifySignChange          yellow          base03
+SignifySignDelete          red             base03
+SignifySignChangeDelete    red             base03
 # }}}
 # ALE {{{
-ALEErrorSign               orange          none
-ALEWarningSign             yellow          none
+ALEErrorSign               orange          base03
+ALEWarningSign             yellow          base03
 # }}}
 verbatim
 endif

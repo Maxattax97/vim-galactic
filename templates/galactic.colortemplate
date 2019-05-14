@@ -78,12 +78,12 @@ endverbatim
   # Transparent background
   Normal             base1             none
   FoldColumn         fg                none
-  Folded             fg                none             bold s=base03
+  Folded             fg                base03             bold s=base03
   LineNr             base01            base03
   Terminal           fg                none
 
 verbatim
-hi CursorLineNr ctermbg=NONE guifg=NONE
+hi CursorLineNr ctermbg=@base03 guibg=@base03 guifg=NONE
 else
 endverbatim
 
@@ -197,7 +197,7 @@ PmenuThumb           none              base0
 Question             cyan              none              bold
 QuickFixLine     ->  Search
 Search               yellow            none              reverse
-SignColumn           base0             none
+SignColumn           base0             base03
 verbatim
 if get(g:, "@optionprefix_statusline", "") == "low"
 endverbatim
@@ -350,12 +350,12 @@ endverbatim
   # Transparent background
   Normal             base1             none
   FoldColumn         base0             none
-  Folded             base0             none              bold s=base03
+  Folded             base0             base02              bold s=base03
   LineNr             base01            none
   Terminal           fg                none
 
 verbatim
-hi CursorLineNr ctermbg=NONE guifg=NONE
+hi CursorLineNr ctermbg=@base02 guifg=NONE
 else
 endverbatim
 
@@ -486,7 +486,7 @@ PmenuThumb           none              base0
 Question             cyan              none              bold
 QuickFixLine     ->  Search
 Search               yellow            none              reverse
-SignColumn           base0             none
+SignColumn           base0             base03
 verbatim
 if get(g:, "@optionprefix_statusline", "") == "low"
 endverbatim

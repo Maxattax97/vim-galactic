@@ -4,7 +4,7 @@
 " Maintainer:   Max O'Cull <max.ocull@protonmail.com>
 " Website:      https://github.com/maxattax97/vim-galactic
 " License:      OSI approved MIT license
-" Last Updated: Mon 13 May 2019 09:01:02 PM EDT
+" Last Updated: Tue 14 May 2019 03:13:31 PM EDT
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'galactic_use16', &t_Co < 256) ? 16 : 256))
@@ -60,10 +60,10 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
     if !has('gui_running') && get(g:, 'galactic_termtrans', 0)
       hi Normal ctermfg=248 ctermbg=NONE guifg=#ababab guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
+      hi Folded ctermfg=fg ctermbg=234 guifg=fg guibg=#1b1b1b guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
       hi LineNr ctermfg=238 ctermbg=234 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
       hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi CursorLineNr ctermbg=NONE guifg=NONE
+      hi CursorLineNr ctermbg=234 guibg=#1b1b1b guifg=NONE
     else
       hi Normal ctermfg=248 ctermbg=234 guifg=#ababab guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
       hi FoldColumn ctermfg=246 ctermbg=236 guifg=#919191 guibg=#303030 guisp=NONE cterm=NONE gui=NONE
@@ -139,7 +139,7 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
     hi Question ctermfg=36 ctermbg=NONE guifg=#07a38f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi! link QuickFixLine Search
     hi Search ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-    hi SignColumn ctermfg=246 ctermbg=NONE guifg=#919191 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SignColumn ctermfg=246 ctermbg=234 guifg=#919191 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
     if get(g:, "galactic_statusline", "") == "low"
       hi StatusLine ctermfg=238 ctermbg=251 guifg=#474747 guibg=#c6c6c6 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi StatusLineNC ctermfg=238 ctermbg=236 guifg=#474747 guibg=#303030 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -401,21 +401,21 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
       hi pandocEmphasis cterm=italic
     endif
     if get(g:, 'galactic_plugin_hi_groups', 0)
-      hi NeomakeErrorSign ctermfg=166 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi NeomakeWarningSign ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi NeomakeMessageSign ctermfg=36 ctermbg=NONE guifg=#07a38f guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi NeomakeNeomakeInfoSign ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi NeomakeInfoSign ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi GitGutterAdd ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi GitGutterChange ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi GitGutterDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi GitGutterChangeDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi SignifySignAdd ctermfg=71 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi SignifySignChange ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi SignifySignDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi SignifySignChangeDelete ctermfg=202 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi ALEErrorSign ctermfg=166 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-      hi ALEWarningSign ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeErrorSign ctermfg=166 ctermbg=234 guifg=#dd7202 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeWarningSign ctermfg=136 ctermbg=234 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeMessageSign ctermfg=36 ctermbg=234 guifg=#07a38f guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeNeomakeInfoSign ctermfg=71 ctermbg=234 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi NeomakeInfoSign ctermfg=71 ctermbg=234 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterAdd ctermfg=71 ctermbg=234 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterChange ctermfg=136 ctermbg=234 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterDelete ctermfg=202 ctermbg=234 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi GitGutterChangeDelete ctermfg=202 ctermbg=234 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignAdd ctermfg=71 ctermbg=234 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignChange ctermfg=136 ctermbg=234 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignDelete ctermfg=202 ctermbg=234 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi SignifySignChangeDelete ctermfg=202 ctermbg=234 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi ALEErrorSign ctermfg=166 ctermbg=234 guifg=#dd7202 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+      hi ALEWarningSign ctermfg=136 ctermbg=234 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
     endif
     finish
   endif
@@ -445,10 +445,10 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
   if !has('gui_running') && get(g:, 'galactic_termtrans', 0)
     hi Normal ctermfg=238 ctermbg=NONE guifg=#474747 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=59 ctermbg=NONE guifg=#5e5e5e guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi Folded ctermfg=59 ctermbg=NONE guifg=#5e5e5e guibg=NONE guisp=#e2e2e2 cterm=NONE,bold gui=NONE,bold
+    hi Folded ctermfg=59 ctermbg=251 guifg=#5e5e5e guibg=#c6c6c6 guisp=#e2e2e2 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=248 ctermbg=NONE guifg=#ababab guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi CursorLineNr ctermbg=NONE guifg=NONE
+    hi CursorLineNr ctermbg=251 guifg=NONE
   else
     hi Normal ctermfg=238 ctermbg=254 guifg=#474747 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=59 ctermbg=251 guifg=#5e5e5e guibg=#c6c6c6 guisp=NONE cterm=NONE gui=NONE
@@ -536,7 +536,7 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
   hi Question ctermfg=23 ctermbg=NONE guifg=#066b5d guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link QuickFixLine Search
   hi Search ctermfg=58 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi SignColumn ctermfg=59 ctermbg=NONE guifg=#5e5e5e guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi SignColumn ctermfg=59 ctermbg=254 guifg=#5e5e5e guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
   if get(g:, "galactic_statusline", "") == "low"
     hi StatusLine ctermfg=248 ctermbg=254 guifg=#ababab guibg=#e2e2e2 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi StatusLineNC ctermfg=248 ctermbg=238 guifg=#ababab guibg=#474747 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -800,21 +800,21 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
     hi pandocEmphasis cterm=italic
   endif
   if get(g:, 'galactic_plugin_hi_groups', 0)
-    hi NeomakeErrorSign ctermfg=130 ctermbg=NONE guifg=#924901 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeWarningSign ctermfg=58 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeMessageSign ctermfg=23 ctermbg=NONE guifg=#066b5d guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeNeomakeInfoSign ctermfg=22 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeInfoSign ctermfg=22 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterAdd ctermfg=22 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterChange ctermfg=58 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterDelete ctermfg=124 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterChangeDelete ctermfg=124 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignAdd ctermfg=22 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignChange ctermfg=58 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignDelete ctermfg=124 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignChangeDelete ctermfg=124 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi ALEErrorSign ctermfg=130 ctermbg=NONE guifg=#924901 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi ALEWarningSign ctermfg=58 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeErrorSign ctermfg=130 ctermbg=254 guifg=#924901 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeWarningSign ctermfg=58 ctermbg=254 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeMessageSign ctermfg=23 ctermbg=254 guifg=#066b5d guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeNeomakeInfoSign ctermfg=22 ctermbg=254 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeInfoSign ctermfg=22 ctermbg=254 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterAdd ctermfg=22 ctermbg=254 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterChange ctermfg=58 ctermbg=254 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterDelete ctermfg=124 ctermbg=254 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterChangeDelete ctermfg=124 ctermbg=254 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignAdd ctermfg=22 ctermbg=254 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignChange ctermfg=58 ctermbg=254 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignDelete ctermfg=124 ctermbg=254 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignChangeDelete ctermfg=124 ctermbg=254 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi ALEErrorSign ctermfg=130 ctermbg=254 guifg=#924901 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+    hi ALEWarningSign ctermfg=58 ctermbg=254 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
   endif
   finish
 endif
@@ -859,10 +859,10 @@ if &background ==# 'dark'
   if !has('gui_running') && get(g:, 'galactic_termtrans', 0)
     hi Normal ctermfg=14 ctermbg=NONE guifg=#ababab guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
+    hi Folded ctermfg=fg ctermbg=8 guifg=fg guibg=#1b1b1b guisp=#1b1b1b cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=10 ctermbg=8 guifg=#474747 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
     hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi CursorLineNr ctermbg=NONE guifg=NONE
+    hi CursorLineNr ctermbg=8 guibg=#1b1b1b guifg=NONE
   else
     hi Normal ctermfg=14 ctermbg=8 guifg=#ababab guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=12 ctermbg=0 guifg=#919191 guibg=#303030 guisp=NONE cterm=NONE gui=NONE
@@ -938,7 +938,7 @@ if &background ==# 'dark'
   hi Question ctermfg=6 ctermbg=NONE guifg=#07a38f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link QuickFixLine Search
   hi Search ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi SignColumn ctermfg=12 ctermbg=NONE guifg=#919191 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi SignColumn ctermfg=12 ctermbg=8 guifg=#919191 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
   if get(g:, "galactic_statusline", "") == "low"
     hi StatusLine ctermfg=10 ctermbg=7 guifg=#474747 guibg=#c6c6c6 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi StatusLineNC ctermfg=10 ctermbg=0 guifg=#474747 guibg=#303030 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1200,21 +1200,21 @@ if &background ==# 'dark'
     hi pandocEmphasis cterm=italic
   endif
   if get(g:, 'galactic_plugin_hi_groups', 0)
-    hi NeomakeErrorSign ctermfg=9 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeWarningSign ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeMessageSign ctermfg=6 ctermbg=NONE guifg=#07a38f guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeNeomakeInfoSign ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi NeomakeInfoSign ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterAdd ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterChange ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignAdd ctermfg=2 ctermbg=NONE guifg=#4ca340 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignChange ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignifySignChangeDelete ctermfg=1 ctermbg=NONE guifg=#ff511a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi ALEErrorSign ctermfg=9 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi ALEWarningSign ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeErrorSign ctermfg=9 ctermbg=8 guifg=#dd7202 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeWarningSign ctermfg=3 ctermbg=8 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeMessageSign ctermfg=6 ctermbg=8 guifg=#07a38f guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeNeomakeInfoSign ctermfg=2 ctermbg=8 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi NeomakeInfoSign ctermfg=2 ctermbg=8 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterAdd ctermfg=2 ctermbg=8 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterChange ctermfg=3 ctermbg=8 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterDelete ctermfg=1 ctermbg=8 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterChangeDelete ctermfg=1 ctermbg=8 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignAdd ctermfg=2 ctermbg=8 guifg=#4ca340 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignChange ctermfg=3 ctermbg=8 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignDelete ctermfg=1 ctermbg=8 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi SignifySignChangeDelete ctermfg=1 ctermbg=8 guifg=#ff511a guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi ALEErrorSign ctermfg=9 ctermbg=8 guifg=#dd7202 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
+    hi ALEWarningSign ctermfg=3 ctermbg=8 guifg=#a68f01 guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
   endif
   finish
 endif
@@ -1244,10 +1244,10 @@ endif
 if !has('gui_running') && get(g:, 'galactic_termtrans', 0)
   hi Normal ctermfg=10 ctermbg=NONE guifg=#474747 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi FoldColumn ctermfg=11 ctermbg=NONE guifg=#5e5e5e guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi Folded ctermfg=11 ctermbg=NONE guifg=#5e5e5e guibg=NONE guisp=#e2e2e2 cterm=NONE,bold gui=NONE,bold
+  hi Folded ctermfg=11 ctermbg=7 guifg=#5e5e5e guibg=#c6c6c6 guisp=#e2e2e2 cterm=NONE,bold gui=NONE,bold
   hi LineNr ctermfg=14 ctermbg=NONE guifg=#ababab guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi CursorLineNr ctermbg=NONE guifg=NONE
+  hi CursorLineNr ctermbg=7 guifg=NONE
 else
   hi Normal ctermfg=10 ctermbg=8 guifg=#474747 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
   hi FoldColumn ctermfg=11 ctermbg=7 guifg=#5e5e5e guibg=#c6c6c6 guisp=NONE cterm=NONE gui=NONE
@@ -1335,7 +1335,7 @@ hi PmenuThumb ctermfg=NONE ctermbg=11 guifg=NONE guibg=#5e5e5e guisp=NONE cterm=
 hi Question ctermfg=6 ctermbg=NONE guifg=#066b5d guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link QuickFixLine Search
 hi Search ctermfg=3 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-hi SignColumn ctermfg=11 ctermbg=NONE guifg=#5e5e5e guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SignColumn ctermfg=11 ctermbg=15 guifg=#5e5e5e guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
 if get(g:, "galactic_statusline", "") == "low"
   hi StatusLine ctermfg=14 ctermbg=15 guifg=#ababab guibg=#e2e2e2 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi StatusLineNC ctermfg=14 ctermbg=10 guifg=#ababab guibg=#474747 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1599,21 +1599,21 @@ if get(g:, "galactic_term_italics", 0)
   hi pandocEmphasis cterm=italic
 endif
 if get(g:, 'galactic_plugin_hi_groups', 0)
-  hi NeomakeErrorSign ctermfg=9 ctermbg=NONE guifg=#924901 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi NeomakeWarningSign ctermfg=3 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi NeomakeMessageSign ctermfg=6 ctermbg=NONE guifg=#066b5d guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi NeomakeNeomakeInfoSign ctermfg=2 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi NeomakeInfoSign ctermfg=2 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterAdd ctermfg=2 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterChange ctermfg=3 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterDelete ctermfg=1 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi SignifySignAdd ctermfg=2 ctermbg=NONE guifg=#056e07 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi SignifySignChange ctermfg=3 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi SignifySignDelete ctermfg=1 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi SignifySignChangeDelete ctermfg=1 ctermbg=NONE guifg=#b02a01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi ALEErrorSign ctermfg=9 ctermbg=NONE guifg=#924901 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi ALEWarningSign ctermfg=3 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi NeomakeErrorSign ctermfg=9 ctermbg=15 guifg=#924901 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi NeomakeWarningSign ctermfg=3 ctermbg=15 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi NeomakeMessageSign ctermfg=6 ctermbg=15 guifg=#066b5d guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi NeomakeNeomakeInfoSign ctermfg=2 ctermbg=15 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi NeomakeInfoSign ctermfg=2 ctermbg=15 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi GitGutterAdd ctermfg=2 ctermbg=15 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi GitGutterChange ctermfg=3 ctermbg=15 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi GitGutterDelete ctermfg=1 ctermbg=15 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi GitGutterChangeDelete ctermfg=1 ctermbg=15 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi SignifySignAdd ctermfg=2 ctermbg=15 guifg=#056e07 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi SignifySignChange ctermfg=3 ctermbg=15 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi SignifySignDelete ctermfg=1 ctermbg=15 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi SignifySignChangeDelete ctermfg=1 ctermbg=15 guifg=#b02a01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi ALEErrorSign ctermfg=9 ctermbg=15 guifg=#924901 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
+  hi ALEWarningSign ctermfg=3 ctermbg=15 guifg=#6d5d01 guibg=#e2e2e2 guisp=NONE cterm=NONE gui=NONE
 endif
 finish
 
@@ -1639,7 +1639,7 @@ finish
 " TermCursorNC         base03            base01
 "   Normal             base1             none
 "   FoldColumn         fg                none
-"   Folded             fg                none             bold s=base03
+"   Folded             fg                base03             bold s=base03
 "   LineNr             base01            base03
 "   Terminal           fg                none
 "   Normal            base1             back
@@ -1700,7 +1700,7 @@ finish
 " Question             cyan              none              bold
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
-" SignColumn           base0             none
+" SignColumn           base0             base03
 " StatusLine           base01            base2             reverse
 " StatusLineNC         base01            base02            reverse
 " TabLine              base01            base02            reverse
@@ -1944,21 +1944,21 @@ finish
 " pandocMetadataKey                      blue               none
 " pandocMetadata                         blue               none           bold
 " pandocMetadataTitle                 -> pandocMetadata
-" NeomakeErrorSign           orange          none
-" NeomakeWarningSign         yellow          none
-" NeomakeMessageSign         cyan            none
-" NeomakeNeomakeInfoSign     green           none
-" NeomakeInfoSign            green           none
-" GitGutterAdd               green           none
-" GitGutterChange            yellow          none
-" GitGutterDelete            red             none
-" GitGutterChangeDelete      red             none
-" SignifySignAdd             green           none
-" SignifySignChange          yellow          none
-" SignifySignDelete          red             none
-" SignifySignChangeDelete    red             none
-" ALEErrorSign               orange          none
-" ALEWarningSign             yellow          none
+" NeomakeErrorSign           orange          base03
+" NeomakeWarningSign         yellow          base03
+" NeomakeMessageSign         cyan            base03
+" NeomakeNeomakeInfoSign     green           base03
+" NeomakeInfoSign            green           base03
+" GitGutterAdd               green           base03
+" GitGutterChange            yellow          base03
+" GitGutterDelete            red             base03
+" GitGutterChangeDelete      red             base03
+" SignifySignAdd             green           base03
+" SignifySignChange          yellow          base03
+" SignifySignDelete          red             base03
+" SignifySignChangeDelete    red             base03
+" ALEErrorSign               orange          base03
+" ALEWarningSign             yellow          base03
 " Background: light
 " Color: base3                #1b1b1b                ~        8
 " Color: base2                #303030                ~        0
@@ -1981,7 +1981,7 @@ finish
 " TermCursorNC         base03            base01
 "   Normal             base1             none
 "   FoldColumn         base0             none
-"   Folded             base0             none              bold s=base03
+"   Folded             base0             base02              bold s=base03
 "   LineNr             base01            none
 "   Terminal           fg                none
 "   Normal            base1             back
@@ -2048,7 +2048,7 @@ finish
 " Question             cyan              none              bold
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
-" SignColumn           base0             none
+" SignColumn           base0             base03
 " StatusLine           base01            base03            reverse
 " StatusLineNC         base01            base1             reverse
 " TabLine              base01            base1             reverse
@@ -2294,18 +2294,18 @@ finish
 " pandocMetadataKey                      blue               none
 " pandocMetadata                         blue               none           bold
 " pandocMetadataTitle                 -> pandocMetadata
-" NeomakeErrorSign           orange          none
-" NeomakeWarningSign         yellow          none
-" NeomakeMessageSign         cyan            none
-" NeomakeNeomakeInfoSign     green           none
-" NeomakeInfoSign            green           none
-" GitGutterAdd               green           none
-" GitGutterChange            yellow          none
-" GitGutterDelete            red             none
-" GitGutterChangeDelete      red             none
-" SignifySignAdd             green           none
-" SignifySignChange          yellow          none
-" SignifySignDelete          red             none
-" SignifySignChangeDelete    red             none
-" ALEErrorSign               orange          none
-" ALEWarningSign             yellow          none
+" NeomakeErrorSign           orange          base03
+" NeomakeWarningSign         yellow          base03
+" NeomakeMessageSign         cyan            base03
+" NeomakeNeomakeInfoSign     green           base03
+" NeomakeInfoSign            green           base03
+" GitGutterAdd               green           base03
+" GitGutterChange            yellow          base03
+" GitGutterDelete            red             base03
+" GitGutterChangeDelete      red             base03
+" SignifySignAdd             green           base03
+" SignifySignChange          yellow          base03
+" SignifySignDelete          red             base03
+" SignifySignChangeDelete    red             base03
+" ALEErrorSign               orange          base03
+" ALEWarningSign             yellow          base03
