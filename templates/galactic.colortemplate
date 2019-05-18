@@ -41,14 +41,14 @@ Background: dark
 
 # Color palette {{{
 # Color name                GUI                  Base256    Base16 (optional)
-Color: base03               #1b1b1b                ~        8
+Color: base03               #262626                ~        8
 Color: base02               #303030                ~        0
-Color: base01               #474747                ~        10
-Color: base00               #5e5e5e                ~        11
+Color: base01               #6a6a6a                ~        10
+Color: base00               #777777                ~        11
 Color: base0                #919191                ~        12
-Color: base1                #ababab                ~        14
-Color: base2                #c6c6c6                ~        7
-Color: base3                #e2e2e2                ~        15
+Color: base1                #9e9e9e                ~        14
+Color: base2                #e8e8e8                ~        7
+Color: base3                #f6f6f6                ~        15
 Color: yellow               #a68f01                ~        3
 Color: orange               #dd7202                ~        9
 Color: red                  #ff511a                ~        1
@@ -58,7 +58,7 @@ Color: blue                 #3294ff                ~        4
 Color: cyan                 #07a38f                ~        6
 Color: green                #4ca340                ~        2
 #Color:green                #719e07                ~        2
-Color: back                 #1b1b1b                ~        8
+Color: back                 #262626                ~        8
 # }}}
 
 # Terminal colors {{{
@@ -299,14 +299,14 @@ Background: light
 
 # Color palette {{{
 # Color name                GUI                  Base256    Base16 (optional)
-Color: base3                #1b1b1b                ~        8
+Color: base3                #262626                ~        8
 Color: base2                #303030                ~        0
-Color: base1                #474747                ~        10
-Color: base0                #5e5e5e                ~        11
+Color: base1                #6a6a6a                ~        10
+Color: base0                #777777                ~        11
 Color: base00               #919191                ~        12
-Color: base01               #ababab                ~        14
-Color: base02               #c6c6c6                ~        7
-Color: base03               #e2e2e2                ~        15
+Color: base01               #9e9e9e                ~        14
+Color: base02               #e8e8e8                ~        7
+Color: base03               #f6f6f6                ~        15
 Color: yellow               #6d5d01                ~        3
 Color: orange               #924901                ~        9
 Color: red                  #b02a01                ~        1
@@ -316,7 +316,7 @@ Color: blue                 #0861af                ~        4
 Color: cyan                 #066b5d                ~        6
 Color: green                #056e07                ~        2
 #Color:green                #719e07                ~        2
-Color: back                 #e2e2e2                ~        8
+Color: back                 #f6f6f6                ~        8
 # Color: base3                #002b36                ~        8
 # Color: base2                #073642                ~        0
 # Color: base1                #586e75                ~        10

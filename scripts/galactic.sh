@@ -33,14 +33,14 @@ else
   printf_template_custom="\033]%s%s\033\\"
 fi
 
-printf $printf_template 234 $(hex2rgb "#1b1b1b")
+printf $printf_template 235 $(hex2rgb "#262626")
 printf $printf_template 236 $(hex2rgb "#303030")
-printf $printf_template 238 $(hex2rgb "#474747")
-printf $printf_template 59 $(hex2rgb "#5e5e5e")
+printf $printf_template 242 $(hex2rgb "#6a6a6a")
+printf $printf_template 243 $(hex2rgb "#777777")
 printf $printf_template 246 $(hex2rgb "#919191")
-printf $printf_template 248 $(hex2rgb "#ababab")
-printf $printf_template 251 $(hex2rgb "#c6c6c6")
-printf $printf_template 254 $(hex2rgb "#e2e2e2")
+printf $printf_template 247 $(hex2rgb "#9e9e9e")
+printf $printf_template 254 $(hex2rgb "#e8e8e8")
+printf $printf_template 255 $(hex2rgb "#f6f6f6")
 printf $printf_template 136 $(hex2rgb "#a68f01")
 printf $printf_template 166 $(hex2rgb "#dd7202")
 printf $printf_template 202 $(hex2rgb "#ff511a")
@@ -69,3 +69,4 @@ printf $printf_template 71 $(hex2rgb "#4ca340")
 unset printf_template
 unset printf_template_var
 unset printf_template_custom
+
