@@ -6,7 +6,7 @@ function! airline#themes#galactic#refresh()
   """"""""""""""""""""""""""""""""""""""""""""""""
   let s:background           = get(g:, 'airline_galactic_bg', &background)
   let s:ansi_colors          = get(g:, 'galactic_termcolors', 16) != 256 && &t_Co >= 16 ? 1 : 0
-  let s:use_green            = get(g:, 'airline_galactic_normal_green', 0)
+  let s:use_green            = get(g:, 'airline_galactic_normal_green', 1)
   let s:dark_text            = get(g:, 'airline_galactic_dark_text', 0)
   let s:dark_inactive_border = get(g:, 'airline_galactic_dark_inactive_border', 0)
   let s:tty                  = &t_Co == 8
@@ -69,8 +69,9 @@ function! airline#themes#galactic#refresh()
     let s:N2 = [(s:tty ? s:base01 : s:base2), s:base1, '']
     let s:N3 = [s:base1, s:base2, '']
   endif
-  let s:NF = [s:orange, s:N3[1], '']
+  let s:NF = [s:blue, s:N3[1], '']
   let s:NW = [s:base3, s:orange, '']
+  let s:NE = [s:base3, s:red, '']
   if s:background == 'dark'
     let s:NM = [s:base1, s:N3[1], '']
     let s:NMi = [s:base2, s:N3[1], '']
@@ -80,7 +81,7 @@ function! airline#themes#galactic#refresh()
   endif
 
   " Insert mode
-  let s:I1 = [s:N1[0], s:yellow, 'bold']
+  let s:I1 = [s:N1[0], s:blue, 'bold']
   let s:I2 = s:N2
   let s:I3 = s:N3
   let s:IF = s:NF
@@ -141,7 +142,7 @@ function! airline#themes#galactic#refresh()
         \ s:NW[0].g, s:NW[1].g, s:NW[0].t, s:NW[1].t, s:NW[2]]
 
   let g:airline#themes#galactic#palette.normal.airline_error = [
-        \ s:NW[0].g, s:NW[1].g, s:NW[0].t, s:NW[1].t, s:NW[2]]
+        \ s:NE[0].g, s:NE[1].g, s:NE[0].t, s:NE[1].t, s:NE[2]]
 
   let g:airline#themes#galactic#palette.normal_modified = {
         \ 'airline_c': [s:NM[0].g, s:NM[1].g,
