@@ -4,7 +4,7 @@
 " Maintainer:   Max O'Cull <max.ocull@protonmail.com>
 " Website:      https://github.com/maxattax97/vim-galactic
 " License:      OSI approved MIT license
-" Last Updated: Sat 18 May 2019 12:40:39 PM EDT
+" Last Updated: Sat 18 May 2019 03:41:56 PM EDT
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'galactic_use16', &t_Co < 256) ? 16 : 256))
@@ -417,9 +417,9 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
       hi ALEErrorSign ctermfg=166 ctermbg=235 guifg=#dd7202 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
       hi ALEWarningSign ctermfg=136 ctermbg=235 guifg=#a68f01 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
       hi ALEInfoSign ctermfg=33 ctermbg=235 guifg=#3294ff guibg=#262626 guisp=NONE cterm=NONE gui=NONE
-      hi ALEVirtualTextError ctermfg=166 ctermbg=235 guifg=#dd7202 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
-      hi ALEVirtualTextWarning ctermfg=136 ctermbg=235 guifg=#a68f01 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
-      hi ALEVirtualTextInfo ctermfg=33 ctermbg=235 guifg=#3294ff guibg=#262626 guisp=NONE cterm=NONE gui=NONE
+      hi ALEVirtualTextError ctermfg=166 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi ALEVirtualTextWarning ctermfg=136 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi ALEVirtualTextInfo ctermfg=33 ctermbg=NONE guifg=#3294ff guibg=NONE guisp=NONE cterm=NONE gui=NONE
     endif
     finish
   endif
@@ -820,9 +820,9 @@ if !get(g:, 'galactic_use16', &t_Co < 256)
     hi ALEErrorSign ctermfg=130 ctermbg=255 guifg=#924901 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
     hi ALEWarningSign ctermfg=58 ctermbg=255 guifg=#6d5d01 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
     hi ALEInfoSign ctermfg=25 ctermbg=255 guifg=#0861af guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
-    hi ALEVirtualTextError ctermfg=130 ctermbg=255 guifg=#924901 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
-    hi ALEVirtualTextWarning ctermfg=58 ctermbg=255 guifg=#6d5d01 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
-    hi ALEVirtualTextInfo ctermfg=25 ctermbg=255 guifg=#0861af guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
+    hi ALEVirtualTextError ctermfg=130 ctermbg=NONE guifg=#924901 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi ALEVirtualTextWarning ctermfg=58 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi ALEVirtualTextInfo ctermfg=25 ctermbg=NONE guifg=#0861af guibg=NONE guisp=NONE cterm=NONE gui=NONE
   endif
   finish
 endif
@@ -1224,9 +1224,9 @@ if &background ==# 'dark'
     hi ALEErrorSign ctermfg=9 ctermbg=8 guifg=#dd7202 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
     hi ALEWarningSign ctermfg=3 ctermbg=8 guifg=#a68f01 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
     hi ALEInfoSign ctermfg=4 ctermbg=8 guifg=#3294ff guibg=#262626 guisp=NONE cterm=NONE gui=NONE
-    hi ALEVirtualTextError ctermfg=9 ctermbg=8 guifg=#dd7202 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
-    hi ALEVirtualTextWarning ctermfg=3 ctermbg=8 guifg=#a68f01 guibg=#262626 guisp=NONE cterm=NONE gui=NONE
-    hi ALEVirtualTextInfo ctermfg=4 ctermbg=8 guifg=#3294ff guibg=#262626 guisp=NONE cterm=NONE gui=NONE
+    hi ALEVirtualTextError ctermfg=9 ctermbg=NONE guifg=#dd7202 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi ALEVirtualTextWarning ctermfg=3 ctermbg=NONE guifg=#a68f01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi ALEVirtualTextInfo ctermfg=4 ctermbg=NONE guifg=#3294ff guibg=NONE guisp=NONE cterm=NONE gui=NONE
   endif
   finish
 endif
@@ -1627,9 +1627,9 @@ if get(g:, 'galactic_plugin_hi_groups', 0)
   hi ALEErrorSign ctermfg=9 ctermbg=15 guifg=#924901 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
   hi ALEWarningSign ctermfg=3 ctermbg=15 guifg=#6d5d01 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
   hi ALEInfoSign ctermfg=4 ctermbg=15 guifg=#0861af guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
-  hi ALEVirtualTextError ctermfg=9 ctermbg=15 guifg=#924901 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
-  hi ALEVirtualTextWarning ctermfg=3 ctermbg=15 guifg=#6d5d01 guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
-  hi ALEVirtualTextInfo ctermfg=4 ctermbg=15 guifg=#0861af guibg=#f6f6f6 guisp=NONE cterm=NONE gui=NONE
+  hi ALEVirtualTextError ctermfg=9 ctermbg=NONE guifg=#924901 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi ALEVirtualTextWarning ctermfg=3 ctermbg=NONE guifg=#6d5d01 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi ALEVirtualTextInfo ctermfg=4 ctermbg=NONE guifg=#0861af guibg=NONE guisp=NONE cterm=NONE gui=NONE
 endif
 finish
 
@@ -1976,9 +1976,9 @@ finish
 " ALEErrorSign               orange          base03
 " ALEWarningSign             yellow          base03
 " ALEInfoSign                blue            base03
-" ALEVirtualTextError        orange          base03
-" ALEVirtualTextWarning      yellow          base03
-" ALEVirtualTextInfo         blue            base03
+" ALEVirtualTextError        orange          none
+" ALEVirtualTextWarning      yellow          none
+" ALEVirtualTextInfo         blue            none
 " Background: light
 " Color: base3                #262626                ~        8
 " Color: base2                #303030                ~        0
@@ -2330,6 +2330,6 @@ finish
 " ALEErrorSign               orange          base03
 " ALEWarningSign             yellow          base03
 " ALEInfoSign                blue            base03
-" ALEVirtualTextError        orange          base03
-" ALEVirtualTextWarning      yellow          base03
-" ALEVirtualTextInfo         blue            base03
+" ALEVirtualTextError        orange          none
+" ALEVirtualTextWarning      yellow          none
+" ALEVirtualTextInfo         blue            none

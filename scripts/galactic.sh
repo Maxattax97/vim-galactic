@@ -69,4 +69,3 @@ printf $printf_template 71 $(hex2rgb "#4ca340")
 unset printf_template
 unset printf_template_var
 unset printf_template_custom
-

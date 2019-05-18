@@ -26,9 +26,9 @@ SignifySignChangeDelete    red             base03
 ALEErrorSign               orange          base03
 ALEWarningSign             yellow          base03
 ALEInfoSign                blue            base03
-ALEVirtualTextError        orange          base03
-ALEVirtualTextWarning      yellow          base03
-ALEVirtualTextInfo         blue            base03
+ALEVirtualTextError        orange          none
+ALEVirtualTextWarning      yellow          none
+ALEVirtualTextInfo         blue            none
 # }}}
 verbatim
 endif

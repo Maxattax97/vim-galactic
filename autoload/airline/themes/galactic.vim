@@ -19,14 +19,14 @@ function! airline#themes#galactic#refresh()
   " Via https://github.com/blueyed/vim-colors-solarized/commit/92f2f994 /
   " https://github.com/cuviper/vim-colors-solarized.
   if s:ansi_colors && get(g:, 'galactic_base16', 0)
-    let s:base03  = {'t': 0,  'g': "#1b1b1b"}  " Base 00
+    let s:base03  = {'t': 0,  'g': "#262626"}  " Base 00
     let s:base02  = {'t': 18, 'g': "#303030"}  " Base 01
-    let s:base01  = {'t': 19, 'g': "#474747"}  " Base 02
-    let s:base00  = {'t': 8,  'g': "#5e5e5e"}  " Base 03
+    let s:base01  = {'t': 19, 'g': "#6a6a6a"}  " Base 02
+    let s:base00  = {'t': 8,  'g': "#777777"}  " Base 03
     let s:base0   = {'t': 20, 'g': "#919191"}  " Base 04
-    let s:base1   = {'t': 7,  'g': "#ababab"}  " Base 05
-    let s:base2   = {'t': 21, 'g': "#c6c6c6"}  " Base 06
-    let s:base3   = {'t': 15, 'g': "#e2e2e2"}  " Base 07
+    let s:base1   = {'t': 7,  'g': "#9e9e9e"}  " Base 05
+    let s:base2   = {'t': 21, 'g': "#e8e8e8"}  " Base 06
+    let s:base3   = {'t': 15, 'g': "#f6f6f6"}  " Base 07
     let s:yellow  = {'t': 3,  'g': "#a68f01"}  " Base 0A
     let s:orange  = {'t': 16, 'g': "#dd7202"}  " Base 09
     let s:red     = {'t': 1,  'g': "#ff511a"}  " Base 08
@@ -36,14 +36,14 @@ function! airline#themes#galactic#refresh()
     let s:cyan    = {'t': 6,  'g': "#07a38f"}  " Base 0C
     let s:green   = {'t': 2,  'g': "#4ca340"}  " Base 0B
   else
-    let s:base03  = {'t': s:ansi_colors ?   8 : (s:tty ? '0' : 234), 'g': '#1b1b1b'}
+    let s:base03  = {'t': s:ansi_colors ?   8 : (s:tty ? '0' : 234), 'g': '#262626'}
     let s:base02  = {'t': s:ansi_colors ? '0' : (s:tty ? '0' : 235), 'g': '#303030'}
-    let s:base01  = {'t': s:ansi_colors ?  10 : (s:tty ? '0' : 240), 'g': '#474747'}
-    let s:base00  = {'t': s:ansi_colors ?  11 : (s:tty ? '7' : 241), 'g': '#5e5e5e'}
+    let s:base01  = {'t': s:ansi_colors ?  10 : (s:tty ? '0' : 240), 'g': '#6a6a6a'}
+    let s:base00  = {'t': s:ansi_colors ?  11 : (s:tty ? '7' : 241), 'g': '#777777'}
     let s:base0   = {'t': s:ansi_colors ?  12 : (s:tty ? '7' : 244), 'g': '#919191'}
-    let s:base1   = {'t': s:ansi_colors ?  14 : (s:tty ? '7' : 245), 'g': '#ababab'}
-    let s:base2   = {'t': s:ansi_colors ?   7 : (s:tty ? '7' : 254), 'g': '#c6c6c6'}
-    let s:base3   = {'t': s:ansi_colors ?  15 : (s:tty ? '7' : 230), 'g': '#e2e2e2'}
+    let s:base1   = {'t': s:ansi_colors ?  14 : (s:tty ? '7' : 245), 'g': '#9e9e9e'}
+    let s:base2   = {'t': s:ansi_colors ?   7 : (s:tty ? '7' : 254), 'g': '#e8e8e8'}
+    let s:base3   = {'t': s:ansi_colors ?  15 : (s:tty ? '7' : 230), 'g': '#f6f6f6'}
     let s:yellow  = {'t': s:ansi_colors ?   3 : (s:tty ? '3' : 136), 'g': '#a68f01'}
     let s:orange  = {'t': s:ansi_colors ?   9 : (s:tty ? '1' : 166), 'g': '#dd7202'}
     let s:red     = {'t': s:ansi_colors ?   1 : (s:tty ? '1' : 160), 'g': '#ff511a'}
